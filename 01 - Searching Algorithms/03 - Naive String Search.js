@@ -13,11 +13,9 @@ Pseudo Code: [Searching for a sbstring in a larger string]
 const naiveSearch = (str, pattern) => {
   let count = 0;
   for (let i = 0; i <= str.length - pattern.length; i++) {
-    if (str[i] === pattern[0]) {
-      for (let j = 0; j < pattern.length; j++) {
-        if (str[i + j] !== pattern[j]) break;
-        if (j === pattern.length - 1) count++;
-      }
+    for (let j = 0; j < pattern.length; j++) {
+      if (str[i + j] !== pattern[j]) break;
+      if (j === pattern.length - 1) count++;
     }
   }
   return count;
